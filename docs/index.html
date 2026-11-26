@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<link href="lib/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="lib/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="lib/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="lib/datatables-binding-0.34.0/datatables.js"></script>
+<script src="lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="lib/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="lib/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="lib/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="lib/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="lib/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<script src="lib/plotly-binding-4.12.1/plotly.js"></script>
+<script src="lib/typedarray-0.1/typedarray.min.js"></script>
+<link href="lib/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="lib/plotly-main-2.25.2/plotly-latest.min.js"></script>
+  <meta charset="utf-8"/>
+  <title>Estatísticas PROAD - UFT</title>
+  <style>
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        background-color: #F3F4F6;
+        color: #111827;
+      }
+      .cabecalho-pagina {
+        background-color: #0054A6;
+        color: white;
+        padding: 16px 28px;
+        font-size: 18px;
+        font-weight: 700;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .container-painel {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 24px;
+        align-items: flex-start;
+      }
+      .card {
+        background: white;
+        border: 1px solid #D1D5DB;
+        border-radius: 6px;
+        padding: 16px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      }
+      .bloco-tabela { flex: 1; min-width: 380px; }
+      .bloco-grafico { flex: 1.4; min-width: 460px; }
+
+      /* Estilo Minitab/Azul no cabeçalho da tabela DT */
+      table.dataTable thead th {
+        background-color: #0054A6 !important;
+        color: #FFFFFF !important;
+        font-weight: 600;
+        border-bottom: 2px solid #003D7A !important;
+      }
+    </style>
+</head>
+<body>
+<div class="cabecalho-pagina">Análise de Requisições — PROAD / UFT</div>
+<div class="container-painel">
+  <div class="card bloco-tabela">
+    <div class="datatables html-widget html-fill-item" id="htmlwidget-d41c0c6b866ba754673a" style="width:100%;height:auto;"></div>
+    <script type="application/json" data-for="htmlwidget-d41c0c6b866ba754673a">{"x":{"filter":"none","vertical":false,"data":[["PREFEITURA UNIVERSITÁRIA","STI","Chefia de Gabinete","CAMPUS DE PALMAS","INOVATO","CAMPUS GURUPI","PROEST","CAMPUS PORTO NACIONAL","CAMPUS MIRACEMA","RÁDIO UNIVERSITÁRIA","CAMPUS ARRAIAS","PROEX","ALMOXARIFADO CENTRAL","PROGEDEP"],[6,16,3,40,41,45,16,93,80,8,180,46,2,1],[12330770,8797403.640000001,5042005.73,4237002,3975302,2904000.0003,2474800.59,2294990.5,1745466.88,701000,646345.3100000001,555621.5600000001,10250,4300.08]],"container":"<table class=\"cell-border stripe hover compact\">\n  <thead>\n    <tr>\n      <th>Área Requisitante<\/th>\n      <th>Qtd. Pedidos<\/th>\n      <th>Valor Total<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":12,"autoWidth":true,"language":{"url":"//cdn.datatables.net/plug-ins/1.13.7/i18n/pt-BR.json"},"columnDefs":[{"targets":2,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatCurrency(data, \"R$ \", 2, 3, \".\", \",\", true, null);\n  }"},{"className":"dt-right","targets":[1,2]},{"name":"Área.requisitante","targets":0},{"name":"quantidade_pedidos","targets":1},{"name":"valor_total","targets":2}],"order":[],"orderClasses":false,"lengthMenu":[10,12,25,50,100]}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+  </div>
+  <div class="card bloco-grafico">
+    <div class="plotly html-widget html-fill-item" id="htmlwidget-86a4cde9001047b8853a" style="width:100%;height:400px;"></div>
+    <script type="application/json" data-for="htmlwidget-86a4cde9001047b8853a">{"x":{"data":[{"x":[12330770,8797403.6400000006,5042005.7300000004,4237002,3975302,2904000.0003,2474800.5899999999,2294990.5,1745466.8800000001,701000,646345.31000000006,555621.56000000006,10250,4300.0799999999999],"y":[6,16,3,40,41,45,16,93,80,8,180,46,2,1],"text":["<b>PREFEITURA UNIVERSITÁRIA<\/b><br>Valor Total: R$ 12.330.770,00<br>Qtd. Pedidos: 6","<b>STI<\/b><br>Valor Total: R$  8.797.403,64<br>Qtd. Pedidos: 16","<b>Chefia de Gabinete<\/b><br>Valor Total: R$  5.042.005,73<br>Qtd. Pedidos: 3","<b>CAMPUS DE PALMAS<\/b><br>Valor Total: R$  4.237.002,00<br>Qtd. Pedidos: 40","<b>INOVATO<\/b><br>Valor Total: R$  3.975.302,00<br>Qtd. Pedidos: 41","<b>CAMPUS GURUPI<\/b><br>Valor Total: R$  2.904.000,00<br>Qtd. Pedidos: 45","<b>PROEST<\/b><br>Valor Total: R$  2.474.800,59<br>Qtd. Pedidos: 16","<b>CAMPUS PORTO NACIONAL<\/b><br>Valor Total: R$  2.294.990,50<br>Qtd. Pedidos: 93","<b>CAMPUS MIRACEMA<\/b><br>Valor Total: R$  1.745.466,88<br>Qtd. Pedidos: 80","<b>RÁDIO UNIVERSITÁRIA<\/b><br>Valor Total: R$    701.000,00<br>Qtd. Pedidos: 8","<b>CAMPUS ARRAIAS<\/b><br>Valor Total: R$    646.345,31<br>Qtd. Pedidos: 180","<b>PROEX<\/b><br>Valor Total: R$    555.621,56<br>Qtd. Pedidos: 46","<b>ALMOXARIFADO CENTRAL<\/b><br>Valor Total: R$     10.250,00<br>Qtd. Pedidos: 2","<b>PROGEDEP<\/b><br>Valor Total: R$      4.300,08<br>Qtd. Pedidos: 1"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,84,166,1)","opacity":0.90000000000000002,"size":12.09448818897638,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,84,166,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":41.238688252386879,"r":7.9701120797011216,"b":38.522208385222086,"l":44.831880448318813},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(243,244,246,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":15.940224159402243},"title":{"text":"<b> Gráfico de Dispersão: Valor Total vs. Qtd. de Pedidos <\/b>","font":{"color":"rgba(17,24,39,1)","family":"","size":17.268576172685762},"x":0.5,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-612023.41600000008,13316887.593599999],"tickmode":"array","ticktext":["R$ 0","R$ 5.000.000","R$ 10.000.000"],"tickvals":[0,5000000,10000000],"categoryorder":"array","categoryarray":["R$ 0","R$ 5.000.000","R$ 10.000.000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(107,114,128,1)","ticklen":3.9850560398505608,"tickwidth":0.72455564360919278,"showticklabels":true,"tickfont":{"color":"rgba(55,65,81,1)","family":"","size":12.619344126193443},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(229,231,235,1)","gridwidth":0.53134080531340799,"zeroline":false,"anchor":"y","title":{"text":"<b> Valor Total (R$) <\/b>","font":{"color":"rgba(31,41,55,1)","family":"","size":13.947696139476964}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-7.9500000000000011,194.31999999999999],"tickmode":"array","ticktext":["0","50","100","150"],"tickvals":[8.8817841970012523e-16,49.999999999999993,99.999999999999986,150],"categoryorder":"array","categoryarray":["0","50","100","150"],"nticks":null,"ticks":"outside","tickcolor":"rgba(107,114,128,1)","ticklen":3.9850560398505608,"tickwidth":0.72455564360919278,"showticklabels":true,"tickfont":{"color":"rgba(55,65,81,1)","family":"","size":12.619344126193443},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(229,231,235,1)","gridwidth":0.5313408053134081,"zeroline":false,"anchor":"x","title":{"text":"<b> Quantidade de Pedidos <\/b>","font":{"color":"rgba(31,41,55,1)","family":"","size":13.947696139476964}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(107,114,128,1)","width":1.0626816106268162,"linetype":"solid"},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":2.0615604867573367,"font":{"color":"rgba(0,0,0,1)","family":"","size":12.7521793275218}},"hovermode":"closest","barmode":"relative","hoverlabel":{"bgcolor":"white","bordercolor":"#0054A6","font":{"size":12,"color":"#111827"}}},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"20282235c24":{"x":{},"y":{},"text":{},"type":"scatter"}},"cur_data":"20282235c24","visdat":{"20282235c24":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+  </div>
+</div>
+</body>
+</html>
